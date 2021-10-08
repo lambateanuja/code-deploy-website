@@ -6,6 +6,9 @@ env:
     Organization: prod/sonar:Organization
     Project: prod/sonar:Project
 phases:
+  pre-build:
+    commands:
+      - echo "Hello Kasper, We are in Pre-build"
   install:
     commands:
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
