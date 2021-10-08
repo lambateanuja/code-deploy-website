@@ -1,6 +1,7 @@
 version: 0.2
 env:
   secrets-manager:
+    ENV_VARIABLE_NAME: arn:aws:secretsmanager:us-east-2:155929087771:secret:devsecops-poc-sonar-secrets-Uf0Kct
     LOGIN: prod/sonar:sonartoken
     HOST: prod/sonar:HOST
     Organization: prod/sonar:Organization
