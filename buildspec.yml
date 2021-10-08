@@ -8,7 +8,7 @@ env:
 phases:
   install:
     runtime-versions:
-      java: openjdk8
+      java: latest
   pre_build:
     commands:
       - echo "This is build phase... Zipping my webpage"
