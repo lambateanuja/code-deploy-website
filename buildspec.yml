@@ -12,6 +12,7 @@ phases:
       java: openjdk8
   pre_build:
     commands:
+      - echo "This is build phase... Zipping my webpage"
       - apt-get update
       - apt-get install -y jq
       - wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
@@ -28,11 +29,6 @@ phases:
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$Project >result.json
       - cat result.json
       - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
-phases:
-  build:
-    commands:
-    - echo "This is build phase... Zipping my webpage"
- 
   post_build:
     commands:
     - echo "Deployed to S3"
